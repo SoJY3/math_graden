@@ -1,0 +1,72 @@
+<html lang='en'>
+
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <!-- Custom styling -->
+  <link rel='stylesheet' href='css/styles.css'>
+
+  <!-- something else -->
+
+  <script src="tf.min.js"></script>
+
+  <script src="drawing.js"></script>
+
+  <script src="opencv.js"></script>
+
+  <script src="processing.js"></script>
+
+  <script src="math.js"></script>
+
+  <!-- TODO: Add Javascript files here -->
+
+</head>
+
+<body>
+
+  <div class='container'>
+
+    <!-- TODO: Add title here -->
+
+    <h1 id="title">MATH GARDEN</h1>
+
+    <h2 id='question'><span id='n1'>3</span> + <span id='n2'>2</span> = </h2>
+
+    <!-- TODO: Add a drawing canvas here -->
+
+    <canvas id='my-canvas' width="200" height="200"></canvas>
+
+  </div>
+
+  <div class='container'>
+    <button id='checkAnswer' class='btn' value='Check'>CHECK</button>
+  </div>
+
+  <script>
+
+    console.log('going to add model');
+  
+    loadModel();
+
+    prepareCanvas();
+
+    nextquestion();
+    
+    document.getElementById('checkAnswer').addEventListener('click', function () {
+
+
+      predictImage();
+
+      check();
+      
+      clearCanvas();
+
+      nextquestion();
+
+    });
+
+  </script>
+  <!-- TODO: Set up TF model and drawing logic-->
+  
+</body>
+
+</html>
